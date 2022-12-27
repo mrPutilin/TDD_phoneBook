@@ -10,7 +10,7 @@ public class PhoneBookTest {
     static PhoneBook sut;
 
     @BeforeAll
-    public static void mes () {
+    public static void mes() {
         System.out.println("TESTS STARTED");
         sut = new PhoneBook();
     }

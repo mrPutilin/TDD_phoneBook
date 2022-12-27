@@ -2,13 +2,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PhoneBook {
-    private Map<String, String> book;
+    private Map<String, String> phoneBook;
 
     public PhoneBook() {
-        book = new HashMap<>();
+        phoneBook = new HashMap<>();
     }
 
-    public boolean add(String name, String phone) {
-        return false;
+    public int add(String name, String phone) {
+        phoneBook.put(name, phone);
+        return phoneBook.size();
     }
 }
