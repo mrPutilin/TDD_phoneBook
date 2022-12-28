@@ -3,6 +3,7 @@ import org.apache.commons.collections4.bidimap.DualHashBidiMap;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class PhoneBook {
     private Map<String, String> bookOfPhone;
@@ -27,6 +28,10 @@ public class PhoneBook {
 
     public String findByName(String name) {
         return bookOfPhone.get(name);
+    }
+
+    public Set<String> printAllNames() {
+        return null;
     }
 
 }

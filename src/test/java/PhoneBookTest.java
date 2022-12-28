@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.*;
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.*;
+
 public class PhoneBookTest {
 
 
@@ -53,7 +54,21 @@ public class PhoneBookTest {
         Assertions.assertEquals(expected, sut.findByName("Markus"));
     }
 
+    @Test
+    void shouldPrintAllNamesInAlphabetOrder() {
+        Set<String> f = new TreeSet<>();
+        f.add("Zahar");
+        f.add("Goblin");
+        f.add("Adam");
 
+        sut.add("Goblin", "222");
+        sut.add("Adam", "333");
+        sut.add("Zahar", "555");
+
+        Assertions.assertEquals(f, sut.printAllNames());
+
+    }
+    
     @AfterEach
     void finishedEach() {
         System.out.println("Test completed");
