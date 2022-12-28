@@ -17,6 +17,11 @@ public class PhoneBook {
     }
 
     public String findByNumber(String value) {
+        for (Map.Entry<String, String> entry : bookOfPhone.entrySet()) {
+            if (entry.getValue().equals(value)) {
+                return entry.getKey();
+            }
+        }
         return null;
     }
 

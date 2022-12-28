@@ -55,5 +55,5 @@ public class PhoneBookTest {
     public static void finishedAll () {
         System.out.println("TESTS FINISHED");
     }
-    
+
 }
