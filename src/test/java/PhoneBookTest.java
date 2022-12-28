@@ -45,6 +45,14 @@ public class PhoneBookTest {
         Assertions.assertEquals(expected, sut.findByNumber("444"));
     }
 
+    @Test
+    void shouldFindNumberByName() {
+        sut.add("Markus", "555");
+        String expected = "555";
+
+        Assertions.assertEquals(expected, sut.findByName("555"));
+    }
+
 
     @AfterEach
     void finishedEach() {
