@@ -1,41 +1,53 @@
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
-
-import java.util.stream.Stream;
-
+import java.util.HashMap;
+import java.util.Map;
 public class PhoneBookTest {
 
-    static PhoneBook sut;
 
-    @BeforeAll
-    public static void mes() {
-        System.out.println("TESTS STARTED");
-        sut = new PhoneBook();
-    }
+
+    PhoneBook sut;
 
     @BeforeEach
     public void init() {
         System.out.println("Test started");
-    }
+        sut = new PhoneBook();
 
-    @ParameterizedTest
-    @MethodSource("source")
-    public void shouldReturnAmountContacts(String name, String phone, int expected) {
-
-        Assertions.assertEquals(expected, sut.add(name, phone));
 
     }
 
-    private static Stream<Arguments> source() {
-        return Stream.of(Arguments.of("Tony", "444", 1 ),
-                        Arguments.of("Ben", "555", 2),
-                        Arguments.of("Tony", "666", 2));
+    @BeforeAll
+    public static void mes() {
+        System.out.println("TESTS STARTED");
+
     }
+
+    @Test
+    public void addTestShouldReturnAmountContacts() {
+        Map<String, String> s = new HashMap<>();
+        s.put("dd", "11");
+        s.put("aa", "22");
+        s.put("dd", "77");
+        int expected = s.size();
+
+        sut.add("dd", "11");
+        sut.add("aa", "22");
+        int result = sut.add("dd", "77");
+
+        Assertions.assertEquals(expected, result);
+    }
+
+
+    @Test
+    void shouldFindNameByNumber() {
+        sut.add("Robbi", "444");
+        String expected = "Robbi";
+
+        Assertions.assertEquals(expected, sut.findByNumber("444"));
+    }
+
 
     @AfterEach
-    public void finishedEach() {
+    void finishedEach() {
         System.out.println("Test completed");
     }
 
@@ -43,6 +55,5 @@ public class PhoneBookTest {
     public static void finishedAll () {
         System.out.println("TESTS FINISHED");
     }
-
-
+    
 }
