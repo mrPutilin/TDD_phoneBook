@@ -50,7 +50,7 @@ public class PhoneBookTest {
         sut.add("Markus", "555");
         String expected = "555";
 
-        Assertions.assertEquals(expected, sut.findByName("555"));
+        Assertions.assertEquals(expected, sut.findByName("Markus"));
     }
 
 
