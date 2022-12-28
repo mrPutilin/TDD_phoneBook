@@ -31,7 +31,7 @@ public class PhoneBook {
     }
 
     public Set<String> printAllNames() {
-        return null;
+        return bookOfPhone.keySet();
     }
 
 }

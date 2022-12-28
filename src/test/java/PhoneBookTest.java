@@ -3,9 +3,6 @@ import org.junit.jupiter.api.*;
 import java.util.*;
 
 public class PhoneBookTest {
-
-
-
     PhoneBook sut;
 
     @BeforeEach
@@ -68,14 +65,14 @@ public class PhoneBookTest {
         Assertions.assertEquals(f, sut.printAllNames());
 
     }
-    
+
     @AfterEach
     void finishedEach() {
         System.out.println("Test completed");
     }
 
     @AfterAll
-    public static void finishedAll () {
+    public static void finishedAll() {
         System.out.println("TESTS FINISHED");
     }
 
